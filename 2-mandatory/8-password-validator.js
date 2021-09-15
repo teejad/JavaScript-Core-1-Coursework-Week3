@@ -23,7 +23,31 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 */
 
-function validatePasswords(passwords) {}
+
+
+function validatePasswords(passwords) {
+ const validPassword = passwords.map((password, index ,arr ) => containsUppercaseLetter(password) && containsLowercaseLetter(password) && 
+ containsNumber(password) && containsSymbol(password) && password.length >= 5 &&  doesNotContainDuplicate(password, arr, index)); 
+ console.log(validPassword) 
+ return validPassword;
+}
+
+
+
+
+
+
+// function validatePasswords(passwords) {passwords.map((password, index) => {
+//     return (
+//       containsUppercaseLetter(password) &&
+//       containsLowercaseLetter(password) &&
+//       containsNumber(password) &&
+//       containsSymbol(password) &&
+//       password.length >= 5 &&
+//       passwords.indexOf(password) === index
+//     );
+//   });
+// }
 
 // Returns true if string contains at least one uppercase letter.
 function containsUppercaseLetter(string) {
@@ -44,7 +68,10 @@ function containsNumber(string) {
 function containsSymbol(string) {
   return /[!#$%.*&]/.test(string);
 }
-
+//Returns false if the password is duplicate 
+function doesNotContainDuplicate(string , passwords , index) {
+  return passwords.indexOf(string) === index;
+}
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("Example 1", () => {
