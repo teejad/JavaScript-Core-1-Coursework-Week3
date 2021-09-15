@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+return array.slice(0,5);
 }
 
 /*
@@ -11,7 +12,9 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+ let newArr = array.sort();
+ return newArr; 
 }
 
 /*
@@ -24,18 +27,30 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
-}
+  function tidyUpString(arr) {
+  return arr.map((array) => array.toLowerCase().trim().replace(/\//g, "")); 
 
+};
+
+
+// console.log(tidyUpString(testArr));
 /*
 Write a function that:
 - Takes an array and an index as input.
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+// function remove() {
+// }
+function remove(arr, index) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[index]) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
 }
-
 /*
 Write a function that:
 - Takes an array of numbers as input.

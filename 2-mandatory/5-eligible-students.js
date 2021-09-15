@@ -7,7 +7,13 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
 */
 
-function getEligibleStudents() {}
+// function getEligibleStudents() {}
+// function getEligibleStudents(arrAttended, count) {
+//   return arrAttended.filter((num => num[1]>= 8)).map(item => item[0]);  
+// }
+function getEligibleStudents(studensArr, stuAtt) {
+  return studensArr.filter((num => num[1]>= 8)).map(item => item[0]);  
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

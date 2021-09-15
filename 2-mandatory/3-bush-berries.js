@@ -20,9 +20,25 @@
   
   Let's first look at an example that will teach you how to use these methods.
 */
-
+// function checkBerry(berryColor){
+//   return berryColor == "pink"
+// }
+// function isBushSafe(berryArray) { 
+//   // Write your code here
+// let checkBerrySafe = berryArray.every(checkBerry):
+// if (isBushSafe){
+//   return "Bush is safe to eat from"
+// } else {
+//   return "Toxic! Leave bush alone!"
+// }
+// }
 function isBushSafe(berryArray) {
-  //Write your code here
+  
+  if (berryArray.every((berry) => berry === "pink")) {
+    return "Bush is safe to eat from";
+  }
+
+  return "Toxic! Leave bush alone!";
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

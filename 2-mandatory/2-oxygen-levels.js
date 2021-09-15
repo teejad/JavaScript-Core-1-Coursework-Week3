@@ -2,6 +2,7 @@
     Many years into the future, a team of Space Voyagers find their ship is low on Oxygen and need to dock
     somewhere safe while they call home for help.
   
+  
     Their computer detects a list of nearby planets that have Oxygen in their atmosphere.
 
     To be safe, they need to land on the first unnamed planet that has Oxygen levels between 19.5% and 23.5%.
@@ -11,7 +12,15 @@
     Some string methods that might help you here are .replace() and .substring(). 
 */
 
-function findSafeOxygenLevel() {}
+function findSafeOxygenLevel(oxygen) {
+  return oxygen.find((oxygenLevel) => {
+    if (oxygenLevel.includes("%")) {
+      let oxygenLevelInt = parseFloat(oxygenLevel);
+      return oxygenLevelInt > 19.5 && oxygenLevelInt < 23.5;
+    }
+  });
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
